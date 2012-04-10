@@ -39,10 +39,10 @@ class Extension : public ExtensionBase
         Extension()
         {
             DECLARE_THE_EXTENSION("AdvancedXML",
-                                  _("XML (avancé)"),
+                                  _("Advanced XML"),
                                   _("Extension permettant de traiter des fichiers XML."),
                                   "Victor Levasseur",
-                                  "Propriétaire")
+                                  "zlib licence / free")
 
             #if defined(GD_IDE_ONLY)
 

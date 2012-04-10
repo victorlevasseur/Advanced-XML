@@ -49,7 +49,7 @@ class Extension : public ExtensionBase
             DECLARE_ACTION("NewFile",
                            _("Créer un document XML"),
                            _("Crée un document XML."),
-                           _("Créer un document XML en tant que _PARAM0_"),
+                           _("Créer un document XML dans la référence _PARAM0_"),
                            _("XML avancé : Documents"),
                            "res/AdvancedXML/AdvancedXML.png",
                            "res/AdvancedXML/AdvancedXML16.png");
@@ -64,7 +64,7 @@ class Extension : public ExtensionBase
             DECLARE_ACTION("LoadFile",
                            _("Charger un fichier XML"),
                            _("Charge un fichier XML."),
-                           _("Charger le fichier XML _PARAM0_ en tant que _PARAM1_"),
+                           _("Charger le fichier XML _PARAM0_ dans la référence _PARAM1_"),
                            _("XML avancé : Documents"),
                            "res/AdvancedXML/AdvancedXML.png",
                            "res/AdvancedXML/AdvancedXML16.png");
@@ -113,7 +113,7 @@ class Extension : public ExtensionBase
             DECLARE_ACTION("NextSibling",
                            _("Aller sur l'élément suivant"),
                            _("Crée une référence sur un élément suivant d'un élément.\nNote : L'élément récupéré sera invalide s'il n'existe pas : il est conseillé de tester son existance avec la condition."),
-                           _("Charger l'élément _PARAM2_ suivant _PARAM1_ dans la référence _PARAM0_)"),
+                           _("Charger l'élément nommé _PARAM2_ suivant _PARAM1_ dans la référence _PARAM0_"),
                            _("XML avancé : Général"),
                            "res/AdvancedXML/AdvancedXML.png",
                            "res/AdvancedXML/AdvancedXML16.png");
@@ -130,7 +130,7 @@ class Extension : public ExtensionBase
             DECLARE_CONDITION("IsRefValid",
                            _("La référence est valide"),
                            _("Est valide uniquement si la référence est sur un élément existant et valide."),
-                           _("_PARAM0_ est valide"),
+                           _("_PARAM0_ existe et est valide"),
                            _("XML avancé : Général"),
                            "res/AdvancedXML/AdvancedXML.png",
                            "res/AdvancedXML/AdvancedXML16.png");
@@ -145,7 +145,7 @@ class Extension : public ExtensionBase
             DECLARE_ACTION("CreateNewElement",
                            _("Créer une nouvel élément"),
                            _("Crée un nouvel élément.\nNote : les références permettent d'accéder à un élément grâce au nom de la référence."),
-                           _("Créer un élément en tant que _PARAM0_ de type _PARAM1_"),
+                           _("Créer un nouvel élément dans la référence _PARAM0_ de type _PARAM1_"),
                            _("XML avancé : Général"),
                            "res/AdvancedXML/AdvancedXML.png",
                            "res/AdvancedXML/AdvancedXML16.png");
@@ -208,7 +208,7 @@ class Extension : public ExtensionBase
             DECLARE_ACTION("SetAttributeNumber",
                            _("Changer la valeur d'un attribut"),
                            _("Change la valeur d'un attribut d'un élément (qui doit être une balide)."),
-                           _("Faire _PARAM3__PARAM2_ à l'attribut _PARAM1_ de _PARAM0_"),
+                           _("Faire _PARAM3__PARAM2_ à l'attribut _PARAM1_ de l'élément _PARAM0_"),
                            _("XML avancé : Balise"),
                            "res/AdvancedXML/AdvancedXML.png",
                            "res/AdvancedXML/AdvancedXML16.png");
@@ -240,7 +240,7 @@ class Extension : public ExtensionBase
             DECLARE_ACTION("SetAttributeString",
                            _("Changer le texte d'un attribut"),
                            _("Change le texte d'un attribut d'un élément (qui doit être une balide)."),
-                           _("Faire _PARAM3__PARAM2_ à l'attribut _PARAM1_ de _PARAM0_"),
+                           _("Faire _PARAM3__PARAM2_ à l'attribut _PARAM1_ de l'élément _PARAM0_"),
                            _("XML avancé : Balise"),
                            "res/AdvancedXML/AdvancedXML.png",
                            "res/AdvancedXML/AdvancedXML16.png");
@@ -258,7 +258,7 @@ class Extension : public ExtensionBase
             DECLARE_ACTION("RemoveAttribute",
                            _("Supprimer un attribut"),
                            _("Supprime un attribut d'un élément (qui doit être une balide)."),
-                           _("Supprimer l'attribut _PARAM1_ de _PARAM0_"),
+                           _("Supprimer l'attribut _PARAM1_ de l'élément _PARAM0_"),
                            _("XML avancé : Balise"),
                            "res/AdvancedXML/AdvancedXML.png",
                            "res/AdvancedXML/AdvancedXML16.png");

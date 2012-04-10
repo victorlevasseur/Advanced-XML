@@ -48,7 +48,7 @@ namespace AdvancedXML
         void SetRef(const std::string &refName, TiXmlNode *node);
 
         /**
-            Delete all child (TiXmlNode) refs from a given ref (use to prevent memory leaks).
+            Delete all child (TiXmlNode) refs from a given ref (use to prevent memory leaks and pointers pointing on invalid data to avoid crashs).
          */
         void DeleteChildRefs(const std::string &parentRef);
 

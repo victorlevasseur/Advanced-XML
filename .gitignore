@@ -1,3 +1,5 @@
 tests
 addAdvanceXML.bat
+src/AdvancedXML.depend
+src/AdvancedXML.layout
 src/obj

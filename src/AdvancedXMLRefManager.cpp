@@ -134,6 +134,12 @@ namespace AdvancedXML
 
     void RefManager::CreateRef(const std::string &baseRef, const std::string &newRef, const std::string &path)
     {
+        /** Note :  .. => Browse to its parent
+                    .  => Browse to the document it lives in
+                    *  => Browse to the first (don't take care of tag name) child element
+                    else browse to first child element with the given tag name.
+        */
+
         TiXmlNode *baseNode = GetRef(baseRef);
 
         if(!baseNode)

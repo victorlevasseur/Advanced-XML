@@ -39,7 +39,7 @@ class Extension : public ExtensionBase
         Extension()
         {
             DECLARE_THE_EXTENSION("AdvancedXML",
-                                  _("Advanced XML"),
+                                  _("Advanced XML 1.0 RC"),
                                   _("Extension permettant de traiter des fichiers XML."),
                                   "Victor Levasseur",
                                   "zlib licence / free")

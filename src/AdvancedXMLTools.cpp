@@ -112,6 +112,28 @@ namespace AdvancedXML
         return RefManager::GetInstance(&scene)->GetRef(refName) ? true : false;
     }
 
+    std::string GD_EXTENSION_API GetText(const std::string &refName, RuntimeScene &scene)
+    {
+        TiXmlNode *refNode = RefManager::GetInstance(&scene)->GetRef(refName);
+
+        if(refNode)
+        {
+            return std::string(refNode->Value());
+        }
+
+        return "";
+    }
+
+    void GD_EXTENSION_API SetText(const std::string &refName, const std::string &text, RuntimeScene &scene)
+    {
+        TiXmlNode *refNode = RefManager::GetInstance(&scene)->GetRef(refName);
+
+        if(refNode)
+        {
+            refNode->SetValue(text.c_str());
+        }
+    }
+
     std::string GD_EXTENSION_API GetAttributeString(const std::string &refname, const std::string &property, RuntimeScene &scene)
     {
         TiXmlNode *refNode = RefManager::GetInstance(&scene)->GetRef(refname);

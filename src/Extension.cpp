@@ -96,7 +96,7 @@ class Extension : public ExtensionBase
             DECLARE_ACTION("BrowseTo",
                            _("Charger un élément dans une référence"),
                            _("Charge un élément (relatif à un autre) dans une référence.\nNote : les références permettent d'accéder à un élément grâce au nom de la référence."),
-                           _("Charger le chemin _PARAM2_ relatif à _PARAM0_ dans la référence _PARAM0_"),
+                           _("Charger le chemin _PARAM2_ relatif à _PARAM0_ dans la référence _PARAM1_"),
                            _("XML avancé : Général"),
                            "res/AdvancedXML/AdvancedXML.png",
                            "res/AdvancedXML/AdvancedXML16.png");
@@ -190,6 +190,66 @@ class Extension : public ExtensionBase
                 instrInfo.cppCallingInformation.SetFunctionName("AdvancedXML::InsertElementIntoAnother").SetIncludeFile("AdvancedXML/AdvancedXMLTools.h");
 
             DECLARE_END_ACTION()
+
+            DECLARE_ACTION("SetTagName",
+                           _("Changer le nom de la balise"),
+                           _("Change le nom de la balise"),
+                           _("Faire _PARAM2__PARAM1_ au nom de la balise _PARAM0_"),
+                           _("XML avancé : Balise"),
+                           "res/AdvancedXML/AdvancedXML.png",
+                           "res/AdvancedXML/AdvancedXML16.png");
+
+                instrInfo.AddParameter("string", _("Référence vers l'élément balise"), "", false);
+                instrInfo.AddParameter("string", _("Nom de la balise"), "", false);
+                instrInfo.AddParameter("operator", _("Signe de modification"), "", true);
+                instrInfo.AddCodeOnlyParameter("currentScene", "");
+
+                instrInfo.cppCallingInformation.SetFunctionName("AdvancedXML::SetText").SetIncludeFile("AdvancedXML/AdvancedXMLTools.h").SetAssociatedGetter("AdvancedXML::GetText").SetManipulatedType("string");
+
+            DECLARE_END_ACTION()
+
+            DECLARE_STR_EXPRESSION("GetTagName",
+                           _("Nom d'une balise"),
+                           _("Récupère le nom d'une balise"),
+                           _("XML avancé : Balise"),
+                           "res/AdvancedXML/AdvancedXML16.png");
+
+                instrInfo.AddParameter("string", _("Référence de l'élément"), "", false);
+                instrInfo.AddCodeOnlyParameter("currentScene", "");
+
+                instrInfo.cppCallingInformation.SetFunctionName("AdvancedXML::GetText").SetIncludeFile("AdvancedXML/AdvancedXMLTools.h");
+
+            DECLARE_END_STR_EXPRESSION()
+
+            DECLARE_ACTION("SetContent",
+                           _("Changer le contenu de l'élément"),
+                           _("Change le contenu (texte) de l'élément texte ou commentaire."),
+                           _("Faire _PARAM2__PARAM1_ au contenu de _PARAM0_"),
+                           _("XML avancé : Texte et Commentaire"),
+                           "res/AdvancedXML/AdvancedXML.png",
+                           "res/AdvancedXML/AdvancedXML16.png");
+
+                instrInfo.AddParameter("string", _("Référence vers l'élément"), "", false);
+                instrInfo.AddParameter("string", _("Contenu"), "", false);
+                instrInfo.AddParameter("operator", _("Signe de modification"), "", true);
+                instrInfo.AddCodeOnlyParameter("currentScene", "");
+
+                instrInfo.cppCallingInformation.SetFunctionName("AdvancedXML::SetText").SetIncludeFile("AdvancedXML/AdvancedXMLTools.h").SetAssociatedGetter("AdvancedXML::GetText").SetManipulatedType("string");
+
+            DECLARE_END_ACTION()
+
+            DECLARE_STR_EXPRESSION("GetContent",
+                           _("Contenu"),
+                           _("Récupère le contenu d'un texte ou d'un commentaire"),
+                           _("XML avancé : Texte et Commentaire"),
+                           "res/AdvancedXML/AdvancedXML16.png");
+
+                instrInfo.AddParameter("string", _("Référence de l'élément"), "", false);
+                instrInfo.AddCodeOnlyParameter("currentScene", "");
+
+                instrInfo.cppCallingInformation.SetFunctionName("AdvancedXML::GetText").SetIncludeFile("AdvancedXML/AdvancedXMLTools.h");
+
+            DECLARE_END_STR_EXPRESSION()
 
             DECLARE_EXPRESSION("GetAttributeNumber",
                            _("Valeur d'un attribut d'un élément"),

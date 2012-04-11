@@ -8,26 +8,26 @@
         <WindowH value="600" />
         <Portable value="false" />
         <Extensions>
-            <Extension name="TextObject" />
-            <Extension name="AdvancedXML" />
-            <Extension name="Sprite" />
             <Extension name="BuiltinObject" />
-            <Extension name="BuiltinCommonInstructions" />
-            <Extension name="BuiltinCommonConversions" />
+            <Extension name="BuiltinAudio" />
             <Extension name="BuiltinVariables" />
+            <Extension name="BuiltinTime" />
             <Extension name="BuiltinMouse" />
             <Extension name="BuiltinKeyboard" />
             <Extension name="BuiltinJoystick" />
-            <Extension name="BuiltinScene" />
-            <Extension name="BuiltinTime" />
-            <Extension name="BuiltinMathematicalTools" />
             <Extension name="BuiltinCamera" />
-            <Extension name="BuiltinAudio" />
+            <Extension name="BuiltinWindow" />
             <Extension name="BuiltinFile" />
             <Extension name="BuiltinNetwork" />
-            <Extension name="BuiltinWindow" />
-            <Extension name="BuiltinStringInstructions" />
+            <Extension name="BuiltinScene" />
             <Extension name="BuiltinAdvanced" />
+            <Extension name="Sprite" />
+            <Extension name="BuiltinCommonInstructions" />
+            <Extension name="BuiltinCommonConversions" />
+            <Extension name="BuiltinStringInstructions" />
+            <Extension name="BuiltinMathematicalTools" />
+            <Extension name="TextObject" />
+            <Extension name="AdvancedXML" />
         </Extensions>
         <FPSmax value="60" />
         <FPSmin value="10" />
@@ -115,11 +115,24 @@
                             <Parametre value="" />
                         </Action>
                         <Action>
+                            <Type value="AdvancedXML::SetTagName" loc="true" />
+                            <Parametre value='&quot;version&quot;' />
+                            <Parametre value='&quot;invalid&quot;' />
+                            <Parametre value="=" />
+                            <Parametre value="" />
+                        </Action>
+                        <Action>
                             <Type value="ModVarScene" loc="true" />
                             <Parametre value="" />
                             <Parametre value="PosY" />
                             <Parametre value="20" />
                             <Parametre value="=" />
+                        </Action>
+                        <Action>
+                            <Type value="AdvancedXML::SaveFile" loc="true" />
+                            <Parametre value='&quot;D:\test.xml&quot;' />
+                            <Parametre value='&quot;root&quot;' />
+                            <Parametre value="" />
                         </Action>
                     </Actions>
                     <Events>

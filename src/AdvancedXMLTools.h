@@ -43,6 +43,9 @@ namespace AdvancedXML
 
     bool GD_EXTENSION_API IsRefValid(const std::string &refName, RuntimeScene &scene);
 
+    std::string GD_EXTENSION_API GetText(const std::string &refName, RuntimeScene &scene);
+    void GD_EXTENSION_API SetText(const std::string &refName, const std::string &text, RuntimeScene &scene);
+
     std::string GD_EXTENSION_API GetAttributeString(const std::string &refname, const std::string &property, RuntimeScene &scene);
     double GD_EXTENSION_API GetAttributeNumber(const std::string &refname, const std::string &property, RuntimeScene &scene);
 

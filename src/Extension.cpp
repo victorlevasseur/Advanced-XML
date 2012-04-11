@@ -1,4 +1,4 @@
-/**
+/*
 
 AdvancedXML
 Copyright (C) 2012 Victor Levasseur
@@ -201,7 +201,7 @@ class Extension : public ExtensionBase
 
                 instrInfo.AddParameter("string", _("Référence vers l'élément balise"), "", false);
                 instrInfo.AddParameter("string", _("Nom de la balise"), "", false);
-                instrInfo.AddParameter("operator", _("Signe de modification"), "", true);
+                instrInfo.AddParameter("operator", _("Signe de modification"), "", false);
                 instrInfo.AddCodeOnlyParameter("currentScene", "");
 
                 instrInfo.cppCallingInformation.SetFunctionName("AdvancedXML::SetText").SetIncludeFile("AdvancedXML/AdvancedXMLTools.h").SetAssociatedGetter("AdvancedXML::GetText").SetManipulatedType("string");
@@ -231,7 +231,7 @@ class Extension : public ExtensionBase
 
                 instrInfo.AddParameter("string", _("Référence vers l'élément"), "", false);
                 instrInfo.AddParameter("string", _("Contenu"), "", false);
-                instrInfo.AddParameter("operator", _("Signe de modification"), "", true);
+                instrInfo.AddParameter("operator", _("Signe de modification"), "", false);
                 instrInfo.AddCodeOnlyParameter("currentScene", "");
 
                 instrInfo.cppCallingInformation.SetFunctionName("AdvancedXML::SetText").SetIncludeFile("AdvancedXML/AdvancedXMLTools.h").SetAssociatedGetter("AdvancedXML::GetText").SetManipulatedType("string");

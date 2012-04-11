@@ -1,4 +1,4 @@
-/**
+/*
 
 AdvancedXML
 Copyright (C) 2012 Victor Levasseur
@@ -152,9 +152,17 @@ namespace AdvancedXML
             {
                 return;
             }
+            else if(pathArgs.at(a) == "." && !currentNode->GetDocument())
+            {
+                return;
+            }
             else if(pathArgs.at(a) == "..")
             {
                 currentNode = currentNode->Parent();
+            }
+            else if(pathArgs.at(a) == ".")
+            {
+                currentNode = currentNode->GetDocument();
             }
             else if(pathArgs.at(a) == "*")
             {

@@ -66,8 +66,8 @@ class Extension : public ExtensionBase
                            _("Charge un fichier XML."),
                            _("Charger le fichier XML _PARAM0_ dans la référence _PARAM1_"),
                            _("XML avancé : Documents"),
-                           "res/AdvancedXML/AdvancedXML.png",
-                           "res/AdvancedXML/AdvancedXML16.png");
+                           "res/AdvancedXML/AdvancedXMLOpen.png",
+                           "res/AdvancedXML/AdvancedXMLOpen16.png");
 
                 instrInfo.AddParameter("file", _("Fichier source"), "", false);
                 instrInfo.AddParameter("string", _("Référence (permet d'accéder directement à l'élément plus tard)"), "", false);
@@ -82,8 +82,8 @@ class Extension : public ExtensionBase
                            _("Sauvegarde un fichier XML."),
                            _("Sauvegarder le fichier XML _PARAM1_ dans _PARAM0_"),
                            _("XML avancé : Documents"),
-                           "res/AdvancedXML/AdvancedXML.png",
-                           "res/AdvancedXML/AdvancedXML16.png");
+                           "res/AdvancedXML/AdvancedXMLSave.png",
+                           "res/AdvancedXML/AdvancedXMLSave16.png");
 
                 instrInfo.AddParameter("file", _("Fichier où enregistrer le fichier"), "", false);
                 instrInfo.AddParameter("string", _("Référence sur le document XML"), "", false);
@@ -98,8 +98,8 @@ class Extension : public ExtensionBase
                            _("Charge un élément (relatif à un autre) dans une référence.\nNote : les références permettent d'accéder à un élément grâce au nom de la référence."),
                            _("Charger le chemin _PARAM2_ relatif à _PARAM0_ dans la référence _PARAM1_"),
                            _("XML avancé : Général"),
-                           "res/AdvancedXML/AdvancedXML.png",
-                           "res/AdvancedXML/AdvancedXML16.png");
+                           "res/AdvancedXML/AdvancedXMLRef.png",
+                           "res/AdvancedXML/AdvancedXMLRef16.png");
 
                 instrInfo.AddParameter("string", _("Référence d'un élément existant (le chemin de l'élément sera relatif à cet élément)"), "", false);
                 instrInfo.AddParameter("string", _("Nom de la référence à créer sur le futur élément"), "", false);
@@ -115,8 +115,8 @@ class Extension : public ExtensionBase
                            _("Crée une référence sur un élément suivant d'un élément.\nNote : L'élément récupéré sera invalide s'il n'existe pas : il est conseillé de tester son existance avec la condition."),
                            _("Charger l'élément nommé _PARAM2_ suivant _PARAM1_ dans la référence _PARAM0_"),
                            _("XML avancé : Général"),
-                           "res/AdvancedXML/AdvancedXML.png",
-                           "res/AdvancedXML/AdvancedXML16.png");
+                           "res/AdvancedXML/AdvancedXMLRef.png",
+                           "res/AdvancedXML/AdvancedXMLRef16.png");
 
                 instrInfo.AddParameter("string", _("Référence à créer"), "", false);
                 instrInfo.AddParameter("string", _("Référence vers l'élément dont on doit récupérer l'élément suivant"), "", false);
@@ -160,8 +160,8 @@ class Extension : public ExtensionBase
                            _("Crée un nouvel élément.\nNote : les références permettent d'accéder à un élément grâce au nom de la référence."),
                            _("Créer un nouvel élément dans la référence _PARAM0_ de type _PARAM1_"),
                            _("XML avancé : Général"),
-                           "res/AdvancedXML/AdvancedXML.png",
-                           "res/AdvancedXML/AdvancedXML16.png");
+                           "res/AdvancedXML/AdvancedXMLAdd.png",
+                           "res/AdvancedXML/AdvancedXMLAdd16.png");
 
                 instrInfo.AddParameter("string", _("Référence sur l'élément (permettant d'accéder ultérieurement à l'élément)"), "", false);
                 instrInfo.AddParameter("expression", _("Type d'élément à créer\n(0 -> Balise; 1 -> Texte; 2 -> Commentaire)"), "", false);
@@ -177,8 +177,8 @@ class Extension : public ExtensionBase
                            _("Supprime un élément (l'élément sera retiré de son élément parent et détruit)."),
                            _("Supprimer l'élément _PARAM0_"),
                            _("XML avancé : Général"),
-                           "res/AdvancedXML/AdvancedXML.png",
-                           "res/AdvancedXML/AdvancedXML16.png");
+                           "res/AdvancedXML/AdvancedXMLRemove.png",
+                           "res/AdvancedXML/AdvancedXMLRemove16.png");
 
                 instrInfo.AddParameter("string", _("Référence sur l'élément à supprimer"), "", false);
                 instrInfo.AddCodeOnlyParameter("currentScene", "");

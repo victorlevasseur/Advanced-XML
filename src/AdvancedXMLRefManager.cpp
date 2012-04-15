@@ -139,6 +139,7 @@ namespace AdvancedXML
                     .  => Browse to the document it lives in
                     *  => Browse to the first (don't take care of tag name) child element
                     else browse to first child element with the given tag name.
+            Each path elements has to be separated by "/"
         */
 
         TiXmlNode *baseNode = GetRef(baseRef);
@@ -149,27 +150,31 @@ namespace AdvancedXML
         std::vector<std::string> pathArgs = SplitString<std::string>(path, '/');
         TiXmlNode *currentNode = baseNode;
 
-        for(unsigned int a = 0; a < pathArgs.size(); a++)
+        for(unsigned int a = 0;
+            a < pathArgs.size() && currentNode;
+            a++)
         {
-            if(pathArgs.at(a) != ".." && !currentNode->FirstChild(pathArgs.at(a).c_str()))
+            if(pathArgs.at(a) == ".")
             {
-                return;
-            }
-            else if(pathArgs.at(a) == ".." && !currentNode->Parent())
-            {
-                return;
-            }
-            else if(pathArgs.at(a) == "." && !currentNode->GetDocument())
-            {
-                return;
+                if(currentNode->GetDocument())
+                {
+                    currentNode = currentNode->GetDocument();
+                }
+                else
+                {
+                    currentNode = 0;
+                }
             }
             else if(pathArgs.at(a) == "..")
             {
-                currentNode = currentNode->Parent();
-            }
-            else if(pathArgs.at(a) == ".")
-            {
-                currentNode = currentNode->GetDocument();
+                if(currentNode->Parent())
+                {
+                    currentNode = currentNode->Parent();
+                }
+                else
+                {
+                    currentNode = 0;
+                }
             }
             else if(pathArgs.at(a) == "*")
             {

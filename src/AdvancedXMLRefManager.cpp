@@ -23,10 +23,11 @@ Copyright (C) 2012 Victor Levasseur
 
 #include "AdvancedXMLRefManager.h"
 
+#include <algorithm>
+#include <vector>
+
 #include "GDL/CommonTools.h"
 #include "GDL/tinyxml/tinyxml.h"
-
-#include <algorithm>
 
 namespace AdvancedXML
 {

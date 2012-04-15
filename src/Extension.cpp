@@ -39,10 +39,10 @@ class Extension : public ExtensionBase
         Extension()
         {
             DECLARE_THE_EXTENSION("AdvancedXML",
-                                  _("Advanced XML 1.0 RC"),
+                                  _("Advanced XML"),
                                   _("Extension permettant de traiter des fichiers XML."),
                                   "Victor Levasseur",
-                                  "zlib licence / free")
+                                  "zlib/libpng License (Open Source)")
 
             #if defined(GD_IDE_ONLY)
 
@@ -141,6 +141,19 @@ class Extension : public ExtensionBase
                 instrInfo.cppCallingInformation.SetFunctionName("AdvancedXML::IsRefValid").SetIncludeFile("AdvancedXML/AdvancedXMLTools.h");
 
             DECLARE_END_CONDITION()
+
+            DECLARE_EXPRESSION("GetElementType",
+                           _("Type d'élément"),
+                           _("Retourne le type d'élément qu'est l'élément (0 -> Balise, 1 -> Texte, 2 -> Commentaire, 3 -> Document XML, -1 -> Inconnu)"),
+                           _("XML avancé : Général"),
+                           "res/AdvancedXML/AdvancedXML16.png");
+
+                instrInfo.AddParameter("string", _("Référence de l'élément"), "", false);
+                instrInfo.AddCodeOnlyParameter("currentScene", "");
+
+                instrInfo.cppCallingInformation.SetFunctionName("AdvancedXML::GetRefType").SetIncludeFile("AdvancedXML/AdvancedXMLTools.h");
+
+            DECLARE_END_EXPRESSION()
 
             DECLARE_ACTION("CreateNewElement",
                            _("Créer une nouvel élément"),

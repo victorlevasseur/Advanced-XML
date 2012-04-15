@@ -112,6 +112,23 @@ namespace AdvancedXML
         return RefManager::GetInstance(&scene)->GetRef(refName) ? true : false;
     }
 
+    double GD_EXTENSION_API GetRefType(const std::string &refName, RuntimeScene &scene)
+    {
+        switch(RefManager::GetInstance(&scene)->GetRef(refName)->Type())
+        {
+            case TiXmlNode::ELEMENT:
+                return 0;
+            case TiXmlNode::TEXT:
+                return 1;
+            case TiXmlNode::COMMENT:
+                return 2;
+            case TiXmlNode::DOCUMENT:
+                return 3;
+        }
+
+        return -1;
+    }
+
     std::string GD_EXTENSION_API GetText(const std::string &refName, RuntimeScene &scene)
     {
         TiXmlNode *refNode = RefManager::GetInstance(&scene)->GetRef(refName);

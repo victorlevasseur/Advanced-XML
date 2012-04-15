@@ -21,11 +21,10 @@ Copyright (C) 2012 Victor Levasseur
 
 */
 
-#ifndef AdvancedXMLREFMANAGER_H_INCLUDED
-#define AdvancedXMLREFMANAGER_H_INCLUDED
+#ifndef ADVANCEDXMLREFMANAGER_H_INCLUDED
+#define ADVANCEDXMLREFMANAGER_H_INCLUDED
 
 #include <string>
-#include <vector>
 #include <map>
 
 class TiXmlNode;

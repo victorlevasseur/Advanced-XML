@@ -42,7 +42,7 @@ namespace AdvancedXML
     void GD_EXTENSION_API NextSibling(const std::string &futureRefName, const std::string &baseRefName, const std::string &tagName, RuntimeScene &scene);
 
     bool GD_EXTENSION_API IsRefValid(const std::string &refName, RuntimeScene &scene);
-    double GD_EXTENSION_API GetRefType(const std::string &refName, RuntimeScene &scene);
+    int GD_EXTENSION_API GetRefType(const std::string &refName, RuntimeScene &scene);
 
     std::string GD_EXTENSION_API GetText(const std::string &refName, RuntimeScene &scene);
     void GD_EXTENSION_API SetText(const std::string &refName, const std::string &text, RuntimeScene &scene);

@@ -120,6 +120,10 @@ namespace AdvancedXML
         {
             m_refs[refName] = doc;
         }
+        else
+        {
+            m_refs[refName] = 0;
+        }
     }
 
     void RefManager::SaveDocument(const std::string &filename, const std::string &refName)

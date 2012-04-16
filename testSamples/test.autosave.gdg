@@ -27,7 +27,7 @@
             <Extension name="BuiltinStringInstructions" />
             <Extension name="BuiltinMathematicalTools" />
             <Extension name="TextObject" />
-            <Extension name="AdvanceXML" />
+            <Extension name="AdvancedXML" />
         </Extensions>
         <FPSmax value="60" />
         <FPSmin value="10" />
@@ -88,30 +88,37 @@
                     </Conditions>
                     <Actions>
                         <Action>
-                            <Type value="AdvanceXML::LoadFile" loc="true" />
+                            <Type value="AdvancedXML::LoadFile" loc="true" />
                             <Parametre value='&quot;test.xml&quot;' />
                             <Parametre value='&quot;root&quot;' />
                             <Parametre value="" />
                         </Action>
                         <Action>
-                            <Type value="AdvanceXML::BrowseTo" loc="true" />
+                            <Type value="AdvancedXML::BrowseTo" loc="true" />
                             <Parametre value='&quot;root&quot;' />
                             <Parametre value='&quot;firstElement&quot;' />
                             <Parametre value='&quot;test&quot;' />
                             <Parametre value="" />
                         </Action>
                         <Action>
-                            <Type value="AdvanceXML::BrowseTo" loc="true" />
+                            <Type value="AdvancedXML::BrowseTo" loc="true" />
                             <Parametre value='&quot;firstElement&quot;' />
                             <Parametre value='&quot;contentEle&quot;' />
                             <Parametre value='&quot;element&quot;' />
                             <Parametre value="" />
                         </Action>
                         <Action>
-                            <Type value="AdvanceXML::BrowseTo" loc="true" />
+                            <Type value="AdvancedXML::BrowseTo" loc="true" />
                             <Parametre value='&quot;firstElement&quot;' />
                             <Parametre value='&quot;version&quot;' />
                             <Parametre value='&quot;infos/version&quot;' />
+                            <Parametre value="" />
+                        </Action>
+                        <Action>
+                            <Type value="AdvancedXML::SetTagName" loc="true" />
+                            <Parametre value='&quot;version&quot;' />
+                            <Parametre value='&quot;invalid&quot;' />
+                            <Parametre value="=" />
                             <Parametre value="" />
                         </Action>
                         <Action>
@@ -121,13 +128,19 @@
                             <Parametre value="20" />
                             <Parametre value="=" />
                         </Action>
+                        <Action>
+                            <Type value="AdvancedXML::SaveFile" loc="true" />
+                            <Parametre value='&quot;D:\test.xml&quot;' />
+                            <Parametre value='&quot;root&quot;' />
+                            <Parametre value="" />
+                        </Action>
                     </Actions>
                     <Events>
                         <Event disabled="false" folded="false">
                             <Type value="BuiltinCommonInstructions::While" />
                             <WhileConditions>
                                 <Condition>
-                                    <Type value="AdvanceXML::IsRefValid" loc="true" Contraire="false" />
+                                    <Type value="AdvancedXML::IsRefValid" loc="true" Contraire="false" />
                                     <Parametre value='&quot;contentEle&quot;' />
                                     <Parametre value="" />
                                 </Condition>
@@ -147,7 +160,7 @@
                                 <Action>
                                     <Type value="TextObject::String" loc="true" />
                                     <Parametre value="content" />
-                                    <Parametre value='AdvanceXML::GetAttributeString(&quot;contentEle&quot;,&quot;param&quot;)' />
+                                    <Parametre value='AdvancedXML::GetAttributeString(&quot;contentEle&quot;,&quot;param&quot;)' />
                                     <Parametre value="=" />
                                 </Action>
                                 <Action>
@@ -158,7 +171,7 @@
                                     <Parametre value="+" />
                                 </Action>
                                 <Action>
-                                    <Type value="AdvanceXML::NextSibling" loc="true" />
+                                    <Type value="AdvancedXML::NextSibling" loc="true" />
                                     <Parametre value='&quot;contentEle&quot;' />
                                     <Parametre value='&quot;contentEle&quot;' />
                                     <Parametre value='&quot;element&quot;' />

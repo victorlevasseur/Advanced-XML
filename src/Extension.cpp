@@ -142,6 +142,23 @@ class Extension : public ExtensionBase
 
             DECLARE_END_CONDITION()
 
+            DECLARE_CONDITION("GetElementType",
+                           _("Type d'élément"),
+                           _("Teste le type d'un élément.\n(0 -> Balise, 1 -> Texte, 2 -> Commentaire, 3 -> Document XML, -1 -> Inconnu)"),
+                           _("_PARAM0_ est de type _PARAM2__PARAM1_"),
+                           _("XML avancé : Général"),
+                           "res/AdvancedXML/AdvancedXML.png",
+                           "res/AdvancedXML/AdvancedXML16.png");
+
+                instrInfo.AddParameter("string", _("Référence vers l'élément à tester"), "", false);
+                instrInfo.AddParameter("expression", _("Type"), "", false);
+                instrInfo.AddParameter("relationalOperator", _("Signe de comparaison"), "", false);
+                instrInfo.AddCodeOnlyParameter("currentScene", "");
+
+                instrInfo.cppCallingInformation.SetFunctionName("AdvancedXML::GetRefType").SetManipulatedType("number").SetIncludeFile("AdvancedXML/AdvancedXMLTools.h");
+
+            DECLARE_END_CONDITION()
+
             DECLARE_EXPRESSION("GetElementType",
                            _("Type d'élément"),
                            _("Retourne le type d'élément qu'est l'élément (0 -> Balise, 1 -> Texte, 2 -> Commentaire, 3 -> Document XML, -1 -> Inconnu)"),
@@ -156,7 +173,7 @@ class Extension : public ExtensionBase
             DECLARE_END_EXPRESSION()
 
             DECLARE_ACTION("CreateNewElement",
-                           _("Créer une nouvel élément"),
+                           _("Créer un nouvel élément"),
                            _("Crée un nouvel élément.\nNote : les références permettent d'accéder à un élément grâce au nom de la référence."),
                            _("Créer un nouvel élément dans la référence _PARAM0_ de type _PARAM1_"),
                            _("XML avancé : Général"),
